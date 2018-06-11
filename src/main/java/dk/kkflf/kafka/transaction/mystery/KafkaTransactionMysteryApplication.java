@@ -29,8 +29,6 @@ public class KafkaTransactionMysteryApplication {
         ctx.close();
     }
 
-    HibernateTransactionManager
-
     @Bean
     public ApplicationRunner runner(Foo foo) {
         return args -> foo.sendToKafkaAndDB();
@@ -57,9 +55,9 @@ public class KafkaTransactionMysteryApplication {
 
         @Transactional(transactionManager = "chainedTxM")
         public void sendToKafkaAndDB() throws Exception {
-            messageRepository.save(new Message("foo", 1L));
-            System.out.println(this.template.send("foo", "bar"));
-            System.out.println(this.template.send("foo", "baz"));
+            System.out.println("Repo save: " + messageRepository.save(new Message("foo", 1L)));
+            System.out.println("Kafka first: " + this.template.send("foo", "bar"));
+            System.out.println("Kafka second: " + this.template.send("foo", "baz"));
         }
 
     }
