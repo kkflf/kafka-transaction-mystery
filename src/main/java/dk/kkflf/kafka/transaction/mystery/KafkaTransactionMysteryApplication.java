@@ -53,7 +53,7 @@ public class KafkaTransactionMysteryApplication {
         @Autowired
         private MessageRepository messageRepository;
 
-        @Transactional(transactionManager = "chainedTxM")
+        @Transactional(transactionManager = "chainedTxM", rollbackFor = Exception.class)
         public void sendToKafkaAndDB() throws Exception {
             System.out.println("Repo save: " + messageRepository.save(new Message("foo", 1L)));
             System.out.println("Kafka first: " + this.template.send("foo", "bar"));
