@@ -8,6 +8,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.transaction.ChainedTransactionManager;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.transaction.ChainedKafkaTransactionManager;
 import org.springframework.kafka.transaction.KafkaTransactionManager;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -40,8 +41,8 @@ public class KafkaTransactionMysteryApplication {
     }
 
     @Bean
-    public ChainedTransactionManager chainedTxM(JpaTransactionManager jpa, KafkaTransactionManager<?, ?> kafka) {
-        return new ChainedTransactionManager(kafka, jpa);
+    public ChainedKafkaTransactionManager chainedTxM(JpaTransactionManager jpa, KafkaTransactionManager<?, ?> kafka) {
+        return new ChainedKafkaTransactionManager(kafka, jpa);
     }
 
     @Component
