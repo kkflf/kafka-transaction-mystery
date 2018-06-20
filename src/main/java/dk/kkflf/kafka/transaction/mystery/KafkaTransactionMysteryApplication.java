@@ -28,6 +28,7 @@ public class KafkaTransactionMysteryApplication {
 
     @Bean
     public ChainedKafkaTransactionManager chainedTxM(JpaTransactionManager jpa, KafkaTransactionManager<?, ?> kafka) {
+        kafka.rol
         return new ChainedKafkaTransactionManager(kafka, jpa);
     }
 
