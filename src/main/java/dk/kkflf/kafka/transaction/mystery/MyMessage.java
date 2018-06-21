@@ -6,18 +6,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Message {
+public class MyMessage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    String name;
+    private String name;
 
-    public Message() {
+    public MyMessage() {
     }
 
-    public Message(String name) {
+    public MyMessage(String name) {
         this.name = name;
     }
 }

@@ -1,0 +1,155 @@
+2018-06-21 14:36:04.299 DEBUG 63943 --- [ntainer#0-0-C-1] essageListenerContainer$ListenerConsumer : Received: 4 records
+2018-06-21 14:36:04.299 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.k.t.KafkaTransactionManager          : Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2018-06-21 14:36:04.299 DEBUG 63943 --- [ntainer#0-0-C-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=producer-1, transactionalId=mytrans0] Transition from state READY to IN_TRANSACTION
+2018-06-21 14:36:04.299 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.k.t.KafkaTransactionManager          : Created Kafka transaction on producer [CloseSafeProducer [delegate=org.apache.kafka.clients.producer.KafkaProducer@2221033b]]
+2018-06-21 14:36:04.299 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2018-06-21 14:36:04.299 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.orm.jpa.JpaTransactionManager        : Opened new EntityManager [SessionImpl(PersistenceContext[entityKeys=[],collectionKeys=[]];ActionQueue[insertions=ExecutableList{size=0} updates=ExecutableList{size=0} deletions=ExecutableList{size=0} orphanRemovals=ExecutableList{size=0} collectionCreations=ExecutableList{size=0} collectionRemovals=ExecutableList{size=0} collectionUpdates=ExecutableList{size=0} collectionQueuedOps=ExecutableList{size=0} unresolvedInsertDependencies=null])] for JPA transaction
+2018-06-21 14:36:04.299 DEBUG 63943 --- [ntainer#0-0-C-1] o.h.e.t.internal.TransactionImpl         : begin
+2018-06-21 14:36:04.300 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC transaction [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@5e8dc372]
+2018-06-21 14:36:04.300 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.k.s.c.MessagingMessageConverter      : No header mapper is available; Jackson is required for the default mapper; headers (if present) are not mapped but provided raw in kafka_nativeHeaders
+2018-06-21 14:36:04.300 DEBUG 63943 --- [ntainer#0-0-C-1] .a.RecordMessagingMessageListenerAdapter : Processing [GenericMessage [payload=fail, headers={kafka_offset=50, kafka_nativeHeaders=RecordHeaders(headers = [], isReadOnly = false), kafka_consumer=org.apache.kafka.clients.consumer.KafkaConsumer@60562988, kafka_timestampType=CREATE_TIME, kafka_receivedMessageKey=null, kafka_receivedPartitionId=0, kafka_receivedTopic=trans-topic, kafka_receivedTimestamp=1529565375270}]]
+2018-06-21 14:36:04.300 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.k.t.KafkaTransactionManager          : Participating in existing transaction
+2018-06-21 14:36:04.300 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(PersistenceContext[entityKeys=[],collectionKeys=[]];ActionQueue[insertions=ExecutableList{size=0} updates=ExecutableList{size=0} deletions=ExecutableList{size=0} orphanRemovals=ExecutableList{size=0} collectionCreations=ExecutableList{size=0} collectionRemovals=ExecutableList{size=0} collectionUpdates=ExecutableList{size=0} collectionQueuedOps=ExecutableList{size=0} unresolvedInsertDependencies=null])] for JPA transaction
+2018-06-21 14:36:04.300 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2018-06-21 14:36:04.300 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.k.t.KafkaTransactionManager          : Participating in existing transaction
+2018-06-21 14:36:04.300 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(PersistenceContext[entityKeys=[],collectionKeys=[]];ActionQueue[insertions=ExecutableList{size=0} updates=ExecutableList{size=0} deletions=ExecutableList{size=0} orphanRemovals=ExecutableList{size=0} collectionCreations=ExecutableList{size=0} collectionRemovals=ExecutableList{size=0} collectionUpdates=ExecutableList{size=0} collectionQueuedOps=ExecutableList{size=0} unresolvedInsertDependencies=null])] for JPA transaction
+2018-06-21 14:36:04.300 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2018-06-21 14:36:04.300 DEBUG 63943 --- [ntainer#0-0-C-1] org.hibernate.engine.spi.ActionQueue     : Executing identity-insert immediately
+2018-06-21 14:36:04.300 DEBUG 63943 --- [ntainer#0-0-C-1] org.hibernate.SQL                        : insert into my_message (name) values (?)
+Hibernate: insert into my_message (name) values (?)
+2018-06-21 14:36:04.301 DEBUG 63943 --- [ntainer#0-0-C-1] o.h.id.IdentifierGeneratorHelper         : Natively generated identity: 10
+2018-06-21 14:36:04.301 DEBUG 63943 --- [ntainer#0-0-C-1] o.h.r.j.i.ResourceRegistryStandardImpl   : HHH000387: ResultSet's statement was not registered
+2018-06-21 14:36:04.301 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.orm.jpa.JpaTransactionManager        : Participating transaction failed - marking existing transaction as rollback-only
+2018-06-21 14:36:04.301 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.orm.jpa.JpaTransactionManager        : Setting JPA transaction on EntityManager [SessionImpl(PersistenceContext[entityKeys=[EntityKey[dk.kkflf.kafka.transaction.mystery.MyMessage#10]],collectionKeys=[]];ActionQueue[insertions=ExecutableList{size=0} updates=ExecutableList{size=0} deletions=ExecutableList{size=0} orphanRemovals=ExecutableList{size=0} collectionCreations=ExecutableList{size=0} collectionRemovals=ExecutableList{size=0} collectionUpdates=ExecutableList{size=0} collectionQueuedOps=ExecutableList{size=0} unresolvedInsertDependencies=null])] rollback-only
+2018-06-21 14:36:04.301 DEBUG 63943 --- [ntainer#0-0-C-1] cResourceLocalTransactionCoordinatorImpl : JDBC transaction marked for rollback-only (exception provided for stack trace)
+
+java.lang.Exception: exception just for purpose of providing stack trace
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.markRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:271) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.setRollbackOnly(TransactionImpl.java:143) [hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager$JpaTransactionObject.setRollbackOnly(JpaTransactionManager.java:686) [spring-orm-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.orm.jpa.JpaTransactionManager.doSetRollbackOnly(JpaTransactionManager.java:585) [spring-orm-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processRollback(AbstractPlatformTransactionManager.java:847) [spring-tx-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.rollback(AbstractPlatformTransactionManager.java:812) [spring-tx-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.data.transaction.MultiTransactionStatus.rollback(MultiTransactionStatus.java:83) [spring-data-commons-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.springframework.data.transaction.ChainedTransactionManager.rollback(ChainedTransactionManager.java:194) [spring-data-commons-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.completeTransactionAfterThrowing(TransactionAspectSupport.java:550) [spring-tx-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:298) [spring-tx-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98) [spring-tx-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185) [spring-aop-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) [spring-aop-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at dk.kkflf.kafka.transaction.mystery.KafkaTransactionMysteryApplication$$EnhancerBySpringCGLIB$$332bd52a.listen(<generated>) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_172]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_172]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_172]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_172]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:181) [spring-messaging-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:114) [spring-messaging-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:48) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:248) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:80) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:51) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:1071) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.access$2200(KafkaMessageListenerContainer.java:334) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer$4.doInTransactionWithoutResult(KafkaMessageListenerContainer.java:1024) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.transaction.support.TransactionCallbackWithoutResult.doInTransaction(TransactionCallbackWithoutResult.java:36) [spring-tx-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) [spring-tx-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListenerInTx(KafkaMessageListenerContainer.java:1015) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:995) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:866) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:724) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_172]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_172]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_172]
+
+2018-06-21 14:36:04.302 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.k.t.KafkaTransactionManager          : Participating transaction failed - marking existing transaction as rollback-only
+2018-06-21 14:36:04.302 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.t.support.TransactionTemplate        : Initiating transaction rollback on application exception
+
+org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void dk.kkflf.kafka.transaction.mystery.KafkaTransactionMysteryApplication.listen(java.util.List<java.lang.String>) throws java.lang.Exception' threw exception; nested exception is java.lang.Exception: Forced rollback - msg: fail
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:267) ~[spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:80) ~[spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:51) ~[spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:1071) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.access$2200(KafkaMessageListenerContainer.java:334) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer$4.doInTransactionWithoutResult(KafkaMessageListenerContainer.java:1024) ~[spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.transaction.support.TransactionCallbackWithoutResult.doInTransaction(TransactionCallbackWithoutResult.java:36) ~[spring-tx-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) ~[spring-tx-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListenerInTx(KafkaMessageListenerContainer.java:1015) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:995) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:866) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:724) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_172]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_172]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_172]
+Caused by: java.lang.Exception: Forced rollback - msg: fail
+	at dk.kkflf.kafka.transaction.mystery.KafkaTransactionMysteryApplication.listen(KafkaTransactionMysteryApplication.java:85) ~[classes/:na]
+	at dk.kkflf.kafka.transaction.mystery.KafkaTransactionMysteryApplication$$FastClassBySpringCGLIB$$7b3cab85.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746) ~[spring-aop-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294) ~[spring-tx-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98) ~[spring-tx-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185) ~[spring-aop-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) ~[spring-aop-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at dk.kkflf.kafka.transaction.mystery.KafkaTransactionMysteryApplication$$EnhancerBySpringCGLIB$$332bd52a.listen(<generated>) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_172]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_172]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_172]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_172]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:181) ~[spring-messaging-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:114) ~[spring-messaging-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:48) ~[spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:248) ~[spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	... 14 common frames omitted
+
+2018-06-21 14:36:04.302 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction rollback
+2018-06-21 14:36:04.302 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.orm.jpa.JpaTransactionManager        : Rolling back JPA transaction on EntityManager [SessionImpl(PersistenceContext[entityKeys=[EntityKey[dk.kkflf.kafka.transaction.mystery.MyMessage#10]],collectionKeys=[]];ActionQueue[insertions=ExecutableList{size=0} updates=ExecutableList{size=0} deletions=ExecutableList{size=0} orphanRemovals=ExecutableList{size=0} collectionCreations=ExecutableList{size=0} collectionRemovals=ExecutableList{size=0} collectionUpdates=ExecutableList{size=0} collectionQueuedOps=ExecutableList{size=0} unresolvedInsertDependencies=null])]
+2018-06-21 14:36:04.302 DEBUG 63943 --- [ntainer#0-0-C-1] o.h.e.t.internal.TransactionImpl         : rolling back
+2018-06-21 14:36:04.303 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.orm.jpa.JpaTransactionManager        : Closing JPA EntityManager [SessionImpl(PersistenceContext[entityKeys=[],collectionKeys=[]];ActionQueue[insertions=ExecutableList{size=0} updates=ExecutableList{size=0} deletions=ExecutableList{size=0} orphanRemovals=ExecutableList{size=0} collectionCreations=ExecutableList{size=0} collectionRemovals=ExecutableList{size=0} collectionUpdates=ExecutableList{size=0} collectionQueuedOps=ExecutableList{size=0} unresolvedInsertDependencies=null])] after transaction
+2018-06-21 14:36:04.303 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.orm.jpa.EntityManagerFactoryUtils    : Closing JPA EntityManager
+2018-06-21 14:36:04.303 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.k.t.KafkaTransactionManager          : Initiating transaction rollback
+2018-06-21 14:36:04.303 DEBUG 63943 --- [ntainer#0-0-C-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=producer-1, transactionalId=mytrans0] Transition from state IN_TRANSACTION to ABORTING_TRANSACTION
+2018-06-21 14:36:04.303 DEBUG 63943 --- [ntainer#0-0-C-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=producer-1, transactionalId=mytrans0] Enqueuing transactional request (type=EndTxnRequest, transactionalId=mytrans0, producerId=0, producerEpoch=91, result=ABORT)
+2018-06-21 14:36:04.303 DEBUG 63943 --- [ad | producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=producer-1, transactionalId=mytrans0] Not sending EndTxn for completed transaction since no partitions or offsets were successfully added
+2018-06-21 14:36:04.303 DEBUG 63943 --- [ad | producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=producer-1, transactionalId=mytrans0] Transition from state ABORTING_TRANSACTION to READY
+2018-06-21 14:36:04.303 DEBUG 63943 --- [ntainer#0-0-C-1] o.s.k.t.KafkaTransactionManager          : Resuming suspended transaction after completion of inner transaction
+2018-06-21 14:36:04.303 ERROR 63943 --- [ntainer#0-0-C-1] essageListenerContainer$ListenerConsumer : Transaction rolled back
+
+org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void dk.kkflf.kafka.transaction.mystery.KafkaTransactionMysteryApplication.listen(java.util.List<java.lang.String>) throws java.lang.Exception' threw exception; nested exception is java.lang.Exception: Forced rollback - msg: fail
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:267) ~[spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:80) ~[spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:51) ~[spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:1071) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.access$2200(KafkaMessageListenerContainer.java:334) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer$4.doInTransactionWithoutResult(KafkaMessageListenerContainer.java:1024) ~[spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.transaction.support.TransactionCallbackWithoutResult.doInTransaction(TransactionCallbackWithoutResult.java:36) ~[spring-tx-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) ~[spring-tx-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListenerInTx(KafkaMessageListenerContainer.java:1015) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:995) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:866) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:724) [spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_172]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_172]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_172]
+Caused by: java.lang.Exception: Forced rollback - msg: fail
+	at dk.kkflf.kafka.transaction.mystery.KafkaTransactionMysteryApplication.listen(KafkaTransactionMysteryApplication.java:85) ~[classes/:na]
+	at dk.kkflf.kafka.transaction.mystery.KafkaTransactionMysteryApplication$$FastClassBySpringCGLIB$$7b3cab85.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746) ~[spring-aop-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294) ~[spring-tx-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98) ~[spring-tx-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185) ~[spring-aop-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) ~[spring-aop-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at dk.kkflf.kafka.transaction.mystery.KafkaTransactionMysteryApplication$$EnhancerBySpringCGLIB$$332bd52a.listen(<generated>) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_172]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_172]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_172]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_172]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:181) ~[spring-messaging-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:114) ~[spring-messaging-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:48) ~[spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:248) ~[spring-kafka-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	... 14 common frames omitted
+
+2018-06-21 14:36:04.303 DEBUG 63943 --- [ntainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-1, groupId=trans-topic-grp1] Seeking to offset 50 for partition trans-topic-0
+2018-06-21 14:36:04.303 DEBUG 63943 --- [ntainer#0-0-C-1] essageListenerContainer$ListenerConsumer : Commit list: {}
