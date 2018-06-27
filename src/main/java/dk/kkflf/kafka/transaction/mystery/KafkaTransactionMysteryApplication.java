@@ -18,8 +18,6 @@ import org.springframework.kafka.transaction.ChainedKafkaTransactionManager;
 import org.springframework.kafka.transaction.KafkaTransactionManager;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.List;
@@ -76,7 +74,6 @@ public class KafkaTransactionMysteryApplication {
     }
 
     @KafkaListener(topics = "trans-topic", containerFactory = "kafkaListenerContainerFactory")
-    @Transactional(propagation = Propagation.REQUIRED, transactionManager = "chainedTxM", rollbackFor = Exception.class)
     public void listen(List<String> records) throws Exception {
         for (String record : records) {
             MyMessage message = new MyMessage(record);

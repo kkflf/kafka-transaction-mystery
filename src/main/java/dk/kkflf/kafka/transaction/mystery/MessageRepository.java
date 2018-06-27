@@ -14,9 +14,11 @@ public class MessageRepository {
     EntityManager em;
 
     //Mandatory to make sure this is never executed outside a transaction
-    @Transactional(propagation = Propagation.MANDATORY)
+    @Transactional(propagation = Propagation.REQUIRED, transactionManager = "transactionManager", rollbackFor = Exception.class)
     public void save(MyMessage message) {
-        em.persist(message);
+//        em.persist(message);
+        em.merge(message)
+        System.out.println("Msg id: " + message.id);
     }
 
     public MyMessage findById(Long id) {
