@@ -17,7 +17,7 @@ public class MessageRepository {
     @Transactional(propagation = Propagation.REQUIRED, transactionManager = "transactionManager", rollbackFor = Exception.class)
     public void save(MyMessage message) {
 //        em.persist(message);
-        em.merge(message)
+        em.merge(message);
         System.out.println("Msg id: " + message.id);
     }
 

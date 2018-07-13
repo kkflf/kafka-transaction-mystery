@@ -4,10 +4,14 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.IntegerDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
+import org.springframework.kafka.annotation.EnableKafka;
+import org.springframework.kafka.annotation.KafkaHandler;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.config.KafkaListenerContainerFactory;
@@ -25,7 +29,8 @@ import java.util.Map;
 
 @SpringBootApplication
 @EnableTransactionManagement
-public class KafkaTransactionMysteryApplication {
+@EnableKafka
+public class KafkaTransactionMysteryApplication implements ApplicationRunner {
 
     public static void main(String[] args) {
         SpringApplication.run(KafkaTransactionMysteryApplication.class, args);
@@ -73,14 +78,27 @@ public class KafkaTransactionMysteryApplication {
         return props;
     }
 
-    @KafkaListener(topics = "trans-topic", containerFactory = "kafkaListenerContainerFactory")
-    public void listen(List<String> records) throws Exception {
-        for (String record : records) {
-            MyMessage message = new MyMessage(record);
-            messageRepository.save(message);
-            if (record.equals("fail")) {
-                throw new Exception("Forced rollback - msg: " + record);
-            }
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
+        System.out.println("WORKING?");
+    }
+
+//    @KafkaListener(topics = "trans-topic", containerFactory = "kafkaListenerContainerFactory")
+//    public void listen(List<String> records) throws Exception {
+//        for (String record : records) {
+//            System.out.println(record);
+//        }
+//    }
+
+    @EnableKafka
+    @KafkaListener(topics = "trans-topic")
+    static class Listener {
+
+        @KafkaHandler(isDefault = true)
+        public void listen(Object record) throws Exception {
+            System.out.println(record);
         }
     }
+
+
 }
